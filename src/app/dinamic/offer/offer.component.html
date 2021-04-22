@@ -1,0 +1,24 @@
+<div class="root">
+    <div class="left">
+        <mat-form-field appearance="fill">
+            <mat-label>Favorite food</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="">
+    </div>
+    <form class="right">
+        <mat-form-field>
+            <mat-label>ID Oferta</mat-label>
+            <input matInput [disabled]="true">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input matInput [disabled]="true">
+        </mat-form-field>
+    </form>
+</div>

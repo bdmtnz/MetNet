@@ -1,0 +1,27 @@
+.root{
+    margin: 4em 20em 0 20em;
+}
+
+.top{
+    width: 100%;
+    margin: 1em 0;
+}
+
+.bottom{
+    width: 100%;
+    display: flex;
+}
+
+app-characteristics{
+    margin: 0 2em 0 0;
+    width: 100%;
+}
+
+app-prices{
+    margin: 0 0 0 2em;
+    width: 100%;
+}
+
+hr{
+    margin: 4em 0;
+}
