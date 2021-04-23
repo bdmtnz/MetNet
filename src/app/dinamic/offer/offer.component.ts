@@ -22,9 +22,9 @@ export class OfferComponent implements OnInit {
     });
     this.description = this.builder.group({
       id: [this.reducer.state.id],
-      name: [this.reducer.state.versions[0].name]
+      name: [this.reducer.state.name]
     });
-    
+
     this.products = this.reducer.loadProducts();
   }
 

@@ -16,11 +16,11 @@
     <form [formGroup]="description" class="right">
         <mat-form-field>
             <mat-label>ID Oferta</mat-label>
-            <input matInput [value]="reducer.state.id" >
+            <input matInput [value]="reducer.state.id" [disabled]="true">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Nombre</mat-label>
-            <input matInput [value]="reducer.state.name" >
+            <input matInput [value]="reducer.state.name" [disabled]="true">
         </mat-form-field>
     </form>
 </div>

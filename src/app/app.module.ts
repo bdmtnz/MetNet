@@ -11,9 +11,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table';
-import {MatSortModule} from '@angular/material/sort';
-import {MatPaginatorModule} from '@angular/material/paginator';
+
+//NGX
+import {NgxPaginationModule} from 'ngx-pagination';
 
 //COMPONENTS
 import { HeaderComponent } from './static/header/header.component';
@@ -42,9 +42,7 @@ import { DetailsComponent } from './static/details/details.component';
     MatToolbarModule,
     MatIconModule,
     MatInputModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

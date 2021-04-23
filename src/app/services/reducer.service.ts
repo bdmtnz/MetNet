@@ -11,8 +11,7 @@ export class ReducerService {
   state:any;
 
   constructor() {
-    this.state = Ofertas[0];
-    console.log(this.state);
+    this.state = this.parse(Ofertas[0]);
   }
 
   loadProducts(){
@@ -34,7 +33,6 @@ export class ReducerService {
   }
 
   reducers(state:any, action:ACTION) {
-    console.log(state);
     switch (action) {
 
       case ACTION.Update:

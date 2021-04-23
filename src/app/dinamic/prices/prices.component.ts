@@ -11,6 +11,7 @@ import { ReducerService } from 'src/app/services/reducer.service';
 })
 export class PricesComponent implements OnInit {
 
+  p2:number = 1;
   reducer:ReducerService;
   
   constructor(private service:ReducerService){

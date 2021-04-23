@@ -8,6 +8,7 @@ import { ReducerService } from 'src/app/services/reducer.service';
 })
 export class CharacteristicsComponent implements OnInit {
 
+  p: number = 1;
   reducer:ReducerService;
   
   constructor(private service:ReducerService){
