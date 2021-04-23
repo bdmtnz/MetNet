@@ -1,24 +1,26 @@
 <div class="root">
     <div class="left">
-        <mat-form-field appearance="fill">
-            <mat-label>Favorite food</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+        <form [formGroup]="reactive">
+            <mat-form-field appearance="fill">
+                <mat-label>Oferta</mat-label>
+                <mat-select formControlName="id">
+                    <mat-option *ngFor="let item of products" [value]="item.id">
+                        {{item.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
     </div>
     <div class="">
     </div>
-    <form class="right">
+    <form [formGroup]="description" class="right">
         <mat-form-field>
             <mat-label>ID Oferta</mat-label>
-            <input matInput [disabled]="true">
+            <input matInput [value]="reducer.state.id" >
         </mat-form-field>
         <mat-form-field>
             <mat-label>Nombre</mat-label>
-            <input matInput [disabled]="true">
+            <input matInput [value]="reducer.state.versions[0].name" >
         </mat-form-field>
     </form>
 </div>

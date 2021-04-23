@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import { ReducerService } from 'src/app/services/reducer.service';
 
 @Component({
   selector: 'app-offer',
@@ -7,15 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OfferComponent implements OnInit {
 
-  foods = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  reactive:FormGroup;
+  description:FormGroup;
+  products: Array<{id:string, name:string}>;
+  reducer:ReducerService;
 
-  constructor() { }
+  constructor(private service:ReducerService,private builder:FormBuilder) { 
+    this.reducer = this.service;
+
+    this.reactive = this.builder.group({
+      id: [this.reducer.state.id]
+    });
+    this.description = this.builder.group({
+      id: [this.reducer.state.id],
+      name: [this.reducer.state.versions[0].name]
+    });
+    
+    this.products = this.reducer.loadProducts();
+  }
 
   ngOnInit(): void {
+    this.reactive.valueChanges.subscribe(
+      change => {
+        this.reducer.selector(change.id);
+      }
+    );
   }
 
 }

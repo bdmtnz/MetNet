@@ -16,7 +16,7 @@ export class CharacteristicsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   
-  constructor() { 
+  constructor(){
     this.dataSource = new MatTableDataSource([]);
   }
 
