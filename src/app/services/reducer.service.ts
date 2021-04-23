@@ -12,6 +12,7 @@ export class ReducerService {
 
   constructor() {
     this.state = Ofertas[0];
+    console.log(this.state);
   }
 
   loadProducts(){
@@ -25,13 +26,15 @@ export class ReducerService {
   selector(id:string){
     Ofertas.forEach( x => {
       if(x.id == id) {
-        this.reducers(x, ACTION.Update);
+        console.log(x);
+        this.reducers(this.parse(x), ACTION.Update);
         return;
       }
     })
   }
 
   reducers(state:any, action:ACTION) {
+    console.log(state);
     switch (action) {
 
       case ACTION.Update:
@@ -45,6 +48,14 @@ export class ReducerService {
         return this.state;
 
     }
+  }
+
+  parse(data:any){
+    return {id: data.id, name: data.versions[0].name, caracteristicas: data.versions[0].characteristics.map( ch => {
+        return {name: ch.versions[0].name };
+      }), prices: data.versions[0].productOfferingPrices.map( po => {
+        return {name: po.versions[0].name, amount: po.versions[0].price.amount}
+      })};
   }
 
 }
